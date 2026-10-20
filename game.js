@@ -105,6 +105,7 @@ $("jawab").onkeydown = e => { if (e.key === "Enter") submit(); };
 $("lewat").onclick = () => { if (!G.over) wrong(); };
 $("lanjut").onclick = () => {
   if (++G.i < G.qs.length) return loadQ();
+  recordScore("survei", G.names, G.score);
   const [a, b] = G.score;
   $("juara").textContent = a === b ? "Hasil seri!" : `Pemenang: ${G.names[a > b ? 0 : 1]} 🎉`;
   $("akhir").innerHTML = G.names.map((n, i) => `<div><span>${n}</span><b>${G.score[i]}</b></div>`).join("");
