@@ -1,84 +1,127 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Family 100: Jejak Sejarah Indonesia</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <button id="muteBtn" class="mute" aria-label="Suara">🔊</button>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Family 100: Jejak Sejarah Indonesia</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<button id="muteBtn" class="mute" aria-label="Suara">🔊</button>
 
-    <section id="setup" class="screen active">
-      <h1>Family 100</h1>
-      <p class="sub">Jejak Sejarah Indonesia</p>
-      <div class="panel">
-        <label
-          >Nama Tim 1 <input id="t1" value="" maxlength="18"
-        /></label>
-        <label
-          >Nama Tim 2 <input id="t2" value="" maxlength="18"
-        /></label>
-        <label
-          >Pilihan materi
-          <select id="bab">
-            <option value="bab1">
-              Mempertahankan Kemerdekaan 1945–1949
-            </option>
-            <option value="bab2">Demokrasi Liberal 1950–1959</option>
-            <option value="all">Gabungan 1945–1959</option>
-          </select></label
-        >
-        <label
-          >Jumlah pertanyaan
-          <select id="jml"></select
-        ></label>
-        <label
-          >Waktu per jawaban (detik)
-          <select id="waktu">
-            <option>10</option>
-            <option selected>20</option>
-            <option>30</option>
-            <option>45</option>
-          </select></label
-        >
-        <button id="mulai" class="btn">Mulai Permainan</button>
-      </div>
-    </section>
+<button id="homeBtn" class="mute home hidden" aria-label="Menu utama">⌂ Menu</button>
 
-    <section id="game" class="screen">
-      <div class="top">
-        <div class="team" id="tm0"><b id="n0"></b><span id="s0">0</span></div>
-        <div class="center">
-          <div class="info" id="babInfo"></div>
-          <div class="pot">Poin ronde: <b id="pot">0</b></div>
-          <div class="timer" id="timer">20</div>
-        </div>
-        <div class="team" id="tm1"><b id="n1"></b><span id="s1">0</span></div>
-      </div>
-      <h2 id="soal"></h2>
-      <div id="banner"></div>
-      <div class="strikes" id="strikes"></div>
-      <div id="board" class="board"></div>
-      <div class="ctrl">
-        <input
-          id="jawab"
-          placeholder="Ketik jawaban lalu tekan Enter"
-          autocomplete="off"
-        />
-        <button id="kirim" class="btn">Jawab</button>
-        <button id="lewat" class="btn ghost">Salah / Lewati</button>
-        <button id="lanjut" class="btn hidden">Soal Berikutnya</button>
-      </div>
-    </section>
+<section id="menu" class="screen active">
+  <h1>Family 100</h1>
+  <p class="sub">Jejak Sejarah Indonesia</p>
+  <div class="modes">
+    <button class="mode" data-go="setup"><b>🎯 Survei 100</b><span>Tebak jawaban terbanyak, tiga kesempatan salah, rebut poin lawan.</span></button>
+    <button class="mode" data-go="rbSetup"><b>⚡ Rebutan Soal</b><span>Tekan tombol lebih cepat dari lawan, lalu pilih jawaban yang benar.</span></button>
+    <button class="mode" data-go="skor"><b>🏆 Papan Skor</b><span>Lihat akumulasi skor tiap tim dari kedua permainan.</span></button>
+  </div>
+</section>
 
-    <section id="end" class="screen">
-      <h1>Permainan Selesai</h1>
-      <p class="sub" id="juara"></p>
-      <div class="panel final" id="akhir"></div>
-      <button id="ulang" class="btn">Main Lagi</button>
-    </section>
-    <script src="questions.js"></script>
-    <script src="game.js"></script>
-  </body>
+<section id="skor" class="screen">
+  <h1>Papan Skor</h1>
+  <p class="sub">Akumulasi skor tim dari Survei 100 dan Rebutan Soal</p>
+  <div id="skorBody"></div>
+  <div class="ctrl">
+    <button class="btn" data-go="menu">Kembali ke Menu</button>
+    <button id="resetSkor" class="btn ghost">Hapus Semua Skor</button>
+  </div>
+</section>
+
+<section id="setup" class="screen">
+  <h1>Family 100</h1>
+  <p class="sub">Jejak Sejarah Indonesia</p>
+  <div class="panel">
+    <label>Nama Tim 1 <input id="t1" value="Tim Garuda" maxlength="18"></label>
+    <label>Nama Tim 2 <input id="t2" value="Tim Merah Putih" maxlength="18"></label>
+    <label>Pilihan babak
+      <select id="bab">
+        <option value="bab1">Babak 1: Mempertahankan Kemerdekaan 1945–1949</option>
+        <option value="bab2">Babak 2: Demokrasi Liberal 1950–1959</option>
+        <option value="all">Babak Gabungan 1945–1959</option>
+      </select></label>
+    <label>Jumlah pertanyaan <select id="jml"></select></label>
+    <label>Waktu per jawaban (detik) <select id="waktu">
+      <option>10</option><option selected>20</option><option>30</option><option>45</option></select></label>
+    <button id="mulai" class="btn">Mulai Permainan</button>
+    <button class="btn ghost" data-go="menu">Kembali ke Menu</button>
+  </div>
+</section>
+
+<section id="game" class="screen">
+  <div class="top">
+    <div class="team" id="tm0"><b id="n0"></b><span id="s0">0</span></div>
+    <div class="center">
+      <div class="info" id="babInfo"></div>
+      <div class="pot">Poin ronde: <b id="pot">0</b></div>
+      <div class="timer" id="timer">20</div>
+    </div>
+    <div class="team" id="tm1"><b id="n1"></b><span id="s1">0</span></div>
+  </div>
+  <h2 id="soal"></h2>
+  <div id="banner"></div>
+  <div class="strikes" id="strikes"></div>
+  <div id="board" class="board"></div>
+  <div class="ctrl">
+    <input id="jawab" placeholder="Ketik jawaban lalu tekan Enter" autocomplete="off">
+    <button id="kirim" class="btn">Jawab</button>
+    <button id="lewat" class="btn ghost">Salah / Lewati</button>
+    <button id="lanjut" class="btn hidden">Soal Berikutnya</button>
+  </div>
+</section>
+
+<section id="end" class="screen">
+  <h1>Permainan Selesai</h1>
+  <p class="sub" id="juara"></p>
+  <div class="panel final" id="akhir"></div>
+  <button id="ulang" class="btn">Main Lagi</button>
+  <button class="btn ghost" data-go="skor">Lihat Papan Skor</button>
+</section>
+<section id="rbSetup" class="screen">
+  <h1>Rebutan Soal</h1>
+  <p class="sub">Tim 1 tekan tombol <b>A</b>, Tim 2 tekan tombol <b>L</b> (atau ketuk tombolnya)</p>
+  <div class="panel">
+    <label>Nama Tim 1 <input id="rt1" value="Tim Garuda" maxlength="18"></label>
+    <label>Nama Tim 2 <input id="rt2" value="Tim Merah Putih" maxlength="18"></label>
+    <label>Pilihan babak <select id="rbab">
+      <option value="bab1">Babak 1: Kemerdekaan 1945–1949</option>
+      <option value="bab2">Babak 2: Demokrasi Liberal 1950–1959</option>
+      <option value="all">Babak Gabungan 1945–1959</option></select></label>
+    <label>Jumlah pertanyaan <select id="rjml"></select></label>
+    <button id="rmulai" class="btn">Mulai Rebutan</button>
+    <button class="btn ghost" data-go="menu">Kembali ke Menu</button>
+  </div>
+</section>
+
+<section id="rbGame" class="screen">
+  <div class="top">
+    <div class="team" id="rtm0"><b id="rn0"></b><span id="rs0">0</span></div>
+    <div class="center"><div class="info" id="rInfo"></div><div class="timer" id="rTimer">15</div></div>
+    <div class="team" id="rtm1"><b id="rn1"></b><span id="rs1">0</span></div>
+  </div>
+  <h2 id="rSoal"></h2>
+  <div id="rBanner"></div>
+  <div id="rOpts" class="opts"></div>
+  <div class="buzzers">
+    <button id="bz0" class="buzz">Tim 1<small>tombol A</small></button>
+    <button id="bz1" class="buzz b2">Tim 2<small>tombol L</small></button>
+  </div>
+  <button id="rNext" class="btn hidden">Soal Berikutnya</button>
+</section>
+
+<section id="rbEnd" class="screen">
+  <h1>Rebutan Selesai</h1>
+  <p class="sub" id="rJuara"></p>
+  <div class="panel final" id="rAkhir"></div>
+  <button class="btn" data-go="skor">Lihat Papan Skor</button>
+  <button class="btn ghost" data-go="menu">Kembali ke Menu</button>
+</section>
+<script src="js/questions.js"></script>
+<script src="js/game.js"></script>
+<script src="js/rebutan.js"></script>
+<script src="js/skor.js"></script>
+</body>
 </html>
