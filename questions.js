@@ -187,3 +187,116 @@ const BANK = {
     ],
   },
 };
+
+// Bank Rebutan: {q: pertanyaan, o: [jawaban benar, pengecoh...], } -> jawaban benar SELALU indeks pertama (diacak saat tampil)
+const RB = {
+  bab1: [
+    {
+      q: "Siapa yang mengetik naskah Proklamasi Kemerdekaan?",
+      o: ["Sayuti Melik", "Soekarni", "Ahmad Soebardjo", "Chairul Saleh"],
+    },
+    {
+      q: "Proklamasi dibacakan di kediaman Soekarno di jalan…",
+      o: [
+        "Pegangsaan Timur No. 56",
+        "Menteng No. 31",
+        "Imam Bonjol No. 1",
+        "Medan Merdeka Barat",
+      ],
+    },
+    {
+      q: "Hari Pahlawan 10 November memperingati pertempuran di…",
+      o: ["Surabaya", "Ambarawa", "Bandung", "Medan"],
+    },
+    {
+      q: "Palagan Ambarawa (Desember 1945) dipimpin oleh…",
+      o: ["Kolonel Soedirman", "Bung Tomo", "Letkol Soeharto", "A.H. Nasution"],
+    },
+    {
+      q: "Perundingan Renville dilaksanakan di atas kapal…",
+      o: ["USS Renville", "HMS Victory", "KRI Dewaruci", "SS Linggarjati"],
+    },
+    {
+      q: "Serangan Umum 1 Maret 1949 di Yogyakarta dipimpin oleh…",
+      o: [
+        "Letkol Soeharto",
+        "Jenderal Soedirman",
+        "Bung Tomo",
+        "Kolonel Gatot Subroto",
+      ],
+    },
+    {
+      q: "Pemerintah Darurat Republik Indonesia (PDRI) dipimpin oleh…",
+      o: [
+        "Syafruddin Prawiranegara",
+        "Mohammad Hatta",
+        "Sutan Sjahrir",
+        "Amir Sjarifuddin",
+      ],
+    },
+    {
+      q: "Belanda mengakui kedaulatan Indonesia (hasil KMB) pada…",
+      o: ["27 Desember 1949", "17 Agustus 1945", "1 Maret 1949", "5 Juli 1959"],
+    },
+    {
+      q: "Ibu kota RI dipindahkan ke Yogyakarta pada tahun…",
+      o: ["1946", "1945", "1947", "1948"],
+    },
+    {
+      q: "Perjanjian Linggarjati mengakui secara de facto wilayah RI yaitu Jawa, Madura, dan…",
+      o: ["Sumatera", "Kalimantan", "Sulawesi", "Papua"],
+    },
+  ],
+  bab2: [
+    {
+      q: "Pemilu 1955 dilaksanakan pada masa kabinet…",
+      o: ["Burhanuddin Harahap", "Natsir", "Wilopo", "Ali Sastroamidjojo I"],
+    },
+    {
+      q: "Konferensi Asia Afrika 1955 diselenggarakan di kota…",
+      o: ["Bandung", "Jakarta", "Yogyakarta", "Surabaya"],
+    },
+    {
+      q: "Kabinet pertama masa Demokrasi Liberal (1950) dipimpin oleh…",
+      o: ["Mohammad Natsir", "Sukiman", "Wilopo", "Djuanda"],
+    },
+    {
+      q: "Gerakan Benteng digagas oleh…",
+      o: [
+        "Sumitro Djojohadikusumo",
+        "Iskaq Tjokrohadisurjo",
+        "Syafruddin Prawiranegara",
+        "Mohammad Hatta",
+      ],
+    },
+    {
+      q: "Deklarasi Djuanda 1957 menyatakan laut antarpulau Indonesia adalah…",
+      o: [
+        "Bagian dari wilayah NKRI",
+        "Laut internasional",
+        "Zona netral",
+        "Wilayah bersama ASEAN",
+      ],
+    },
+    {
+      q: "Dekrit Presiden 5 Juli 1959 menetapkan kembali berlakunya…",
+      o: ["UUD 1945", "UUDS 1950", "Konstitusi RIS 1949", "UUD Sementara 1959"],
+    },
+    {
+      q: "Dalam sistem ekonomi Ali-Baba, “Ali” melambangkan pengusaha…",
+      o: ["Pribumi", "Tionghoa", "Belanda", "Asing"],
+    },
+    {
+      q: "PRRI diproklamasikan tahun 1958 di wilayah…",
+      o: ["Sumatera Barat", "Sulawesi Utara", "Jawa Barat", "Aceh"],
+    },
+    {
+      q: "Partai peraih suara terbanyak pada Pemilu 1955 adalah…",
+      o: ["PNI", "Masyumi", "NU", "PKI"],
+    },
+    {
+      q: "Mosi Integral Natsir (1950) mendorong kembalinya Indonesia ke bentuk…",
+      o: ["Negara kesatuan", "Negara federal", "Kerajaan", "Persemakmuran"],
+    },
+  ],
+};
