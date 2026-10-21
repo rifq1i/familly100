@@ -100,10 +100,10 @@ const BANK = {
           ["Natsir", 25, ["natsir"]],
           ["Sukiman", 15, ["sukiman"]],
           ["Wilopo", 15, ["wilopo"]],
-          ["Ali Sastroamidjojo I", 15, ["ali sastro", "ali i", "ali 1"]],
           ["Burhanuddin Harahap", 10, ["burhanuddin", "harahap"]],
           ["Djuanda (Kabinet Karya)", 10, ["djuanda", "juanda", "karya"]],
           ["Ali Sastroamidjojo II", 10, ["ali ii", "ali 2"]],
+          ["Ali Sastroamidjojo I", 15, ["ali sastro", "ali i", "ali 1"]],
         ],
       },
       {
@@ -300,3 +300,398 @@ const RB = {
     },
   ],
 };
+
+// ===== PERLUASAN BANK SOAL (Survei 100: soal dan jawaban papan bertambah) =====
+BANK.bab1.soal[2] = {
+  q: "Sebutkan perundingan/persetujuan Indonesia–Belanda 1946–1949!",
+  a: [
+    ["Linggarjati", 22, ["linggarjati"]],
+    ["Renville", 22, ["renville"]],
+    ["Roem-Roijen", 18, ["roem", "royen", "roijen"]],
+    ["Konferensi Meja Bundar (KMB)", 18, ["kmb", "meja bundar"]],
+    ["Perundingan Hoge Veluwe", 10, ["hoge", "veluwe"]],
+    ["Persetujuan Gencatan Senjata (1946)", 10, ["gencatan", "cease"]],
+  ],
+};
+BANK.bab1.soal[5] = {
+  q: "Sebutkan hasil Konferensi Meja Bundar (KMB) 1949!",
+  a: [
+    [
+      "Pengakuan kedaulatan (27 Desember 1949)",
+      30,
+      ["kedaulatan", "pengakuan"],
+    ],
+    ["Pembentukan RIS", 25, ["ris", "serikat"]],
+    ["Pembentukan Uni Indonesia–Belanda", 20, ["uni"]],
+    ["Irian Barat ditunda", 15, ["irian", "papua"]],
+    ["RIS menanggung utang Hindia Belanda", 10, ["utang", "hutang"]],
+  ],
+};
+BANK.bab1.soal[6] = {
+  q: "Sebutkan keputusan/lembaga penting di awal kemerdekaan 1945!",
+  a: [
+    ["KNIP", 22, ["knip", "komite nasional"]],
+    ["BKR", 18, ["bkr", "badan keamanan rakyat"]],
+    ["TKR", 18, ["tkr", "tentara keamanan rakyat"]],
+    ["PPKI", 14, ["ppki"]],
+    ["Kabinet Presidensial", 14, ["kabinet"]],
+    ["Pembagian 8 provinsi", 14, ["provinsi"]],
+  ],
+};
+BANK.bab2.soal[2] = {
+  q: "Sebutkan partai peraih suara terbanyak pada Pemilu 1955!",
+  a: [
+    ["PNI", 24, ["pni", "nasional indonesia"]],
+    ["Masyumi", 24, ["masyumi"]],
+    ["Nahdlatul Ulama (NU)", 18, ["nu", "nahdlatul"]],
+    ["PKI", 16, ["pki", "komunis"]],
+    ["PSII", 6, ["psii"]],
+    ["Parkindo", 6, ["parkindo"]],
+    ["Partai Katolik", 6, ["katolik"]],
+  ],
+};
+BANK.bab1.soal.push(
+  {
+    q: "Sebutkan tokoh golongan muda menjelang Proklamasi 1945!",
+    a: [
+      ["Soekarni", 25, ["soekarni", "sukarni"]],
+      ["Chairul Saleh", 20, ["chairul", "khairul"]],
+      ["Wikana", 20, ["wikana"]],
+      ["Sutan Sjahrir", 15, ["sjahrir", "syahrir"]],
+      ["Adam Malik", 10, ["adam malik"]],
+      ["B.M. Diah", 10, ["diah"]],
+    ],
+  },
+  {
+    q: "Sebutkan hasil sidang PPKI 18 Agustus 1945!",
+    a: [
+      ["Mengesahkan UUD 1945", 30, ["uud", "undang-undang dasar"]],
+      ["Memilih Presiden dan Wakil Presiden", 30, ["presiden", "memilih"]],
+      ["Membentuk KNIP", 20, ["knip", "komite nasional"]],
+      [
+        "Menetapkan Pancasila sebagai dasar negara",
+        20,
+        ["pancasila", "dasar negara"],
+      ],
+    ],
+  },
+  {
+    q: "Sebutkan perunding/diplomat Indonesia pada perundingan 1946–1949!",
+    a: [
+      ["Sutan Sjahrir", 25, ["sjahrir", "syahrir"]],
+      ["Amir Sjarifuddin", 20, ["amir", "sjarifuddin"]],
+      ["Mohammad Roem", 20, ["roem"]],
+      ["Mohammad Hatta", 20, ["hatta"]],
+      ["Haji Agus Salim", 15, ["agus salim", "salim"]],
+    ],
+  },
+  {
+    q: "Sebutkan peristiwa perlawanan rakyat di daerah 1945–1947!",
+    a: [
+      ["Peristiwa Hotel Yamato (Surabaya)", 25, ["yamato"]],
+      ["Pertempuran Lima Hari Semarang", 20, ["semarang"]],
+      ["Peristiwa Merah Putih di Manado", 15, ["manado", "merah putih"]],
+      ["Pertempuran Lima Hari Palembang", 15, ["palembang"]],
+      ["Bandung Lautan Api", 15, ["bandung"]],
+      ["Pertempuran Lengkong", 10, ["lengkong"]],
+    ],
+  },
+  {
+    q: "Sebutkan pemimpin RI yang ditawan Belanda saat Agresi Militer II!",
+    a: [
+      ["Soekarno", 25, ["soekarno", "sukarno"]],
+      ["Mohammad Hatta", 25, ["hatta"]],
+      ["Sutan Sjahrir", 20, ["sjahrir", "syahrir"]],
+      ["Haji Agus Salim", 15, ["agus salim", "salim"]],
+      ["Mohammad Roem", 15, ["roem"]],
+    ],
+  },
+  {
+    q: "Sebutkan negara bagian bentukan Belanda (1946–1949)!",
+    a: [
+      ["Negara Indonesia Timur (NIT)", 25, ["indonesia timur", "nit"]],
+      ["Negara Pasundan", 20, ["pasundan"]],
+      ["Negara Sumatera Timur", 20, ["sumatera timur"]],
+      ["Negara Madura", 15, ["madura"]],
+      ["Negara Jawa Timur", 10, ["jawa timur"]],
+      ["Negara Sumatera Selatan", 10, ["sumatera selatan"]],
+    ],
+  },
+);
+BANK.bab2.soal.push(
+  {
+    q: "Sebutkan tokoh yang berperan dalam Konferensi Asia Afrika 1955!",
+    a: [
+      ["Ali Sastroamidjojo", 30, ["ali sastro", "ali"]],
+      ["Soekarno", 25, ["soekarno", "sukarno"]],
+      ["Jawaharlal Nehru", 15, ["nehru"]],
+      ["Zhou Enlai", 10, ["zhou", "chou"]],
+      ["Gamal Abdel Nasser", 10, ["nasser"]],
+      ["U Nu", 5, ["nu"]],
+      ["Mohammad Ali Bogra", 5, ["bogra"]],
+    ],
+  },
+  {
+    q: "Sebutkan penyebab sering jatuhnya kabinet masa Demokrasi Liberal!",
+    a: [
+      ["Persaingan antarpartai", 30, ["persaingan", "partai"]],
+      ["Mosi tidak percaya parlemen", 25, ["mosi"]],
+      ["Koalisi tidak stabil", 20, ["koalisi"]],
+      ["Pemberontakan daerah", 15, ["pemberontakan", "daerah"]],
+      ["Krisis ekonomi", 10, ["ekonomi"]],
+    ],
+  },
+  {
+    q: "Sebutkan tokoh yang terlibat PRRI/Permesta!",
+    a: [
+      ["Ahmad Husein", 25, ["husein", "hussein"]],
+      ["Syafruddin Prawiranegara", 20, ["syafruddin", "prawiranegara"]],
+      ["Sumitro Djojohadikusumo", 15, ["sumitro"]],
+      ["Mohammad Natsir", 15, ["natsir"]],
+      ["Ventje Sumual", 15, ["sumual"]],
+      ["Maludin Simbolon", 10, ["simbolon"]],
+    ],
+  },
+  {
+    q: "Sebutkan peristiwa politik-militer dalam negeri 1952–1957!",
+    a: [
+      ["Peristiwa 17 Oktober 1952", 30, ["17 oktober"]],
+      ["Peristiwa Cikini (1957)", 25, ["cikini"]],
+      ["Peristiwa 27 Juni 1955", 20, ["27 juni"]],
+      ["Konsepsi Presiden 1957", 15, ["konsepsi"]],
+      ["Dewan Banteng", 10, ["banteng"]],
+    ],
+  },
+  {
+    q: "Sebutkan hasil/dampak Konferensi Asia Afrika 1955!",
+    a: [
+      ["Dasasila Bandung", 35, ["dasasila", "dasa sila"]],
+      ["Solidaritas Asia-Afrika", 25, ["solidaritas", "persatuan"]],
+      [
+        "Dorongan kemerdekaan bangsa Asia-Afrika",
+        20,
+        ["kemerdekaan", "dekolonisasi"],
+      ],
+      ["Cikal bakal Gerakan Non-Blok", 20, ["non-blok", "non blok", "nonblok"]],
+    ],
+  },
+  {
+    q: "Sebutkan negara peserta KAA 1955 (selain Indonesia)!",
+    a: [
+      ["RRT (Tiongkok)", 20, ["rrt", "tiongkok", "china", "cina"]],
+      ["India", 15, ["india"]],
+      ["Mesir", 15, ["mesir"]],
+      ["Jepang", 12, ["jepang"]],
+      ["Filipina", 10, ["filipina"]],
+      ["Turki", 10, ["turki"]],
+      ["Vietnam", 10, ["vietnam"]],
+      ["Thailand", 8, ["thailand"]],
+    ],
+  },
+);
+
+// ===== PERLUASAN BANK REBUTAN: semua soal kini 5 pilihan =====
+[
+  "Wikana",
+  "Kebon Sirih No. 5",
+  "Semarang",
+  "Slamet Riyadi",
+  "USS Missouri",
+  "Ahmad Yani",
+  "Assaat",
+  "2 September 1945",
+  "1949",
+  "Bali",
+].forEach((x, i) => RB.bab1[i].o.push(x));
+[
+  "Sukiman",
+  "Semarang",
+  "Burhanuddin Harahap",
+  "Ali Sastroamidjojo",
+  "Wilayah sengketa",
+  "Piagam Jakarta",
+  "Arab",
+  "Maluku",
+  "Partai Sosialis Indonesia",
+  "Negara teokrasi",
+].forEach((x, i) => RB.bab2[i].o.push(x));
+RB.bab1.push(
+  {
+    q: "Teks Proklamasi ditandatangani oleh…",
+    o: [
+      "Soekarno dan Hatta",
+      "Soekarno dan Sutan Sjahrir",
+      "Hatta dan Soekarni",
+      "Soekarno dan Sayuti Melik",
+      "Soekarno dan Soebardjo",
+    ],
+  },
+  {
+    q: "Bendera Sang Saka Merah Putih pada Proklamasi dijahit oleh…",
+    o: [
+      "Fatmawati",
+      "Inggit Garnasih",
+      "Utari",
+      "R.A. Kartini",
+      "Dewi Sartika",
+    ],
+  },
+  {
+    q: "Peristiwa Rengasdengklok terjadi pada tanggal…",
+    o: [
+      "16 Agustus 1945",
+      "17 Agustus 1945",
+      "15 Agustus 1945",
+      "14 Agustus 1945",
+      "18 Agustus 1945",
+    ],
+  },
+  {
+    q: "Pengerek bendera saat Proklamasi adalah…",
+    o: [
+      "Latief Hendraningrat dan Suhud",
+      "Sayuti Melik dan Wikana",
+      "Soekarni dan Wikana",
+      "Hatta dan Soebardjo",
+      "Fatmawati dan Soekarni",
+    ],
+  },
+  {
+    q: "Presiden dan Wakil Presiden RI pertama dipilih oleh…",
+    o: ["PPKI", "BPUPKI", "KNIP", "DPR", "MPR"],
+  },
+  {
+    q: "Peristiwa Bandung Lautan Api terjadi pada…",
+    o: [
+      "24 Maret 1946",
+      "10 November 1945",
+      "1 Maret 1949",
+      "21 Juli 1947",
+      "19 Desember 1948",
+    ],
+  },
+  {
+    q: "Agresi Militer Belanda II dimulai pada…",
+    o: [
+      "19 Desember 1948",
+      "21 Juli 1947",
+      "17 Agustus 1945",
+      "1 Maret 1949",
+      "27 Desember 1949",
+    ],
+  },
+  {
+    q: "Tokoh yang memimpin perang gerilya meski sedang sakit adalah…",
+    o: [
+      "Jenderal Soedirman",
+      "Letkol Soeharto",
+      "A.H. Nasution",
+      "Bung Tomo",
+      "Slamet Riyadi",
+    ],
+  },
+  {
+    q: "Salah satu hasil Perundingan Roem-Roijen 1949 adalah…",
+    o: [
+      "Pemerintah RI kembali ke Yogyakarta",
+      "Pembentukan negara federal",
+      "Pengakuan Irian Barat",
+      "Pembubaran TNI",
+      "Pengakuan Konstitusi RIS",
+    ],
+  },
+  {
+    q: "Perjanjian Linggarjati ditandatangani pada tahun…",
+    o: ["1947", "1946", "1948", "1949", "1945"],
+  },
+);
+RB.bab2.push(
+  {
+    q: "Perdana Menteri Indonesia saat Konferensi Asia Afrika 1955 adalah…",
+    o: [
+      "Ali Sastroamidjojo",
+      "Burhanuddin Harahap",
+      "Mohammad Natsir",
+      "Wilopo",
+      "Djuanda",
+    ],
+  },
+  {
+    q: "KAA 1955 menghasilkan kesepakatan bernama…",
+    o: [
+      "Dasasila Bandung",
+      "Piagam Jakarta",
+      "Deklarasi Djuanda",
+      "Pancasila Bandung",
+      "Trikora",
+    ],
+  },
+  {
+    q: "Gedung tempat berlangsungnya KAA 1955 adalah…",
+    o: [
+      "Gedung Merdeka",
+      "Gedung Sate",
+      "Balai Kota Bandung",
+      "Istana Merdeka",
+      "Gedung Dwi Warna",
+    ],
+  },
+  {
+    q: "Pemilu 1955 memilih anggota DPR dan…",
+    o: ["Konstituante", "MPR", "DPD", "DPRD", "Presiden"],
+  },
+  {
+    q: "Tugas utama Konstituante hasil Pemilu 1955 adalah…",
+    o: [
+      "Menyusun UUD baru",
+      "Memilih presiden",
+      "Membentuk kabinet",
+      "Mengatur pemilu daerah",
+      "Mengadili pejabat",
+    ],
+  },
+  {
+    q: "Peristiwa Cikini 1957 adalah upaya pembunuhan terhadap…",
+    o: [
+      "Presiden Soekarno",
+      "Mohammad Hatta",
+      "Mohammad Natsir",
+      "Djuanda",
+      "Ali Sastroamidjojo",
+    ],
+  },
+  {
+    q: "Nasionalisasi De Javasche Bank (1951) dilakukan pada masa Kabinet…",
+    o: [
+      "Sukiman",
+      "Natsir",
+      "Wilopo",
+      "Ali Sastroamidjojo I",
+      "Burhanuddin Harahap",
+    ],
+  },
+  {
+    q: "“Gunting Syafruddin” 1950 adalah kebijakan…",
+    o: [
+      "Pemotongan nilai uang",
+      "Pembatasan impor beras",
+      "Penghapusan pajak",
+      "Pencabutan subsidi BBM",
+      "Penambahan cadangan emas",
+    ],
+  },
+  {
+    q: "Presiden Soekarno menyampaikan Konsepsi Presiden pada tahun…",
+    o: ["1957", "1955", "1956", "1958", "1959"],
+  },
+  {
+    q: "Tokoh yang mengundurkan diri dari jabatan Wakil Presiden pada 1956 adalah…",
+    o: [
+      "Mohammad Hatta",
+      "Sri Sultan HB IX",
+      "Adam Malik",
+      "Mohammad Natsir",
+      "Syafruddin Prawiranegara",
+    ],
+  },
+);
