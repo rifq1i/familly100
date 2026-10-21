@@ -27,7 +27,7 @@ function loadR() {
   R.opts = shuffle(q.o.map((t, i) => ({ t, ok: i === 0 })));
   Object.assign(R, { st: "wait", locked: [false, false], who: -1, mark: {} });
   $("rSoal").textContent = q.q;
-  $("rInfo").textContent = `Soal ${R.i + 1}/${R.qs.length} • Benar +10, salah −5`;
+  $("rInfo").textContent = `Soal ${R.i + 1}/${R.qs.length} • Benar +10 poin • salah tidak mengurangi poin`;
   $("rNext").classList.add("hidden");
   rbTimer(15, () => reveal("Waktu habis, tidak ada yang menekan tombol."));
   rbRender("Siapa cepat, dia dapat! Tekan tombol tim kalian.");
@@ -60,7 +60,7 @@ function buzz(t) {
   if (R.st !== "wait" || R.locked[t]) return;
   R.st = "answer"; R.who = t; beep(440, .25, "square");
   rbTimer(10, () => wrongPick(-1));
-  rbRender(`🔔 ${R.names[t]} menekan tombol! Pilih jawaban (klik atau tombol 1–4).`);
+  rbRender(`🔔 ${R.names[t]} menekan tombol! Pilih jawaban (klik atau tombol 1–5).`);
 }
 
 function pick(i) {
@@ -73,11 +73,11 @@ function pick(i) {
 
 function wrongPick(i) {
   const w = R.who; if (i >= 0) R.mark[i] = "bad";
-  R.score[w] -= 5; R.locked[w] = true; sfx.salah();
-  if (R.locked[1 - w]) return reveal(`❌ ${R.names[w]} salah (−5). Kedua tim sudah mencoba.`);
+  R.locked[w] = true; sfx.salah();
+  if (R.locked[1 - w]) return reveal(`❌ ${R.names[w]} salah. Kedua tim sudah mencoba.`);
   R.st = "wait"; R.who = -1;
   rbTimer(10, () => reveal("Waktu habis, soal ditutup."));
-  rbRender(`❌ ${R.names[w]} salah (−5). Kesempatan ${R.names[1 - w]}: tekan tombol tim!`);
+  rbRender(`❌ ${R.names[w]} salah (tanpa pengurangan poin). Kesempatan ${R.names[1 - w]}: tekan tombol tim!`);
 }
 
 function reveal(msg) {
@@ -101,5 +101,5 @@ document.addEventListener("keydown", e => {
   if (!$("rbGame").classList.contains("active") || e.target.tagName === "INPUT") return;
   const k = e.key.toLowerCase();
   if (k === "a") buzz(0); else if (k === "l") buzz(1);
-  else if ("1234".includes(k) && k && R.st === "answer") pick(+k - 1);
+  else if (/^[1-5]$/.test(k) && R.st === "answer" && R.opts[+k - 1]) pick(+k - 1);
 });
